@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		My Blog
+	</title>
+</head>
+<!-- css -->
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+<body>
+
+	<!-- <div class="loading" id="loading">
+		<img src="./images/loading.gif">
+		<p>loading……</p>
+	</div> -->
+
+	<div class="main">
+		
+		<!-- 导航 -->
+
+		<div id="navigation" class="navigation" v-if = "navigation" v-cloak>
+
+			<!-- logo -->
+
+			<h4>{{title}}</h4>
+
+			<!-- column -->
+
+			<ul class="clear">
+				 <li v-for="column in navigation">
+			      {{ column.item }}
+			    </li>
+			</ul>
+
+			<!-- avatar -->
+
+			<img src="./images/avatar.jpg" draggable="false">
+
+		</div>
+
+	</div>
+	
+
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+
+	// var logo = new Vue({
+
+	// 	el:'#logo',
+	// 	data:{
+			
+	// 	}
+
+	// })
+	
+	var navigation = new Vue({
+
+		el:'#navigation',
+		data:{
+			title : 'zitian 个人博客',
+			navigation:[
+				{item : 'first-test'},
+				{item : 'second-test'},
+				{item : 'third-test'},
+			],		
+		}
+
+	})
+
+	
+
+</script>
+</html>
