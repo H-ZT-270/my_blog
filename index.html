@@ -9,51 +9,72 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css" />
 <body>
 
-	<!-- <div class="loading" id="loading">
-		<img src="./images/loading.gif">
-		<p>loading……</p>
-	</div> -->
+	<!-- 导航 -->
 
-	<div class="main">
-		
-		<!-- 导航 -->
+	<div id="navigation" class="navigation" v-if = "navigation" v-cloak>
 
-		<div id="navigation" class="navigation" v-if = "navigation" v-cloak>
+		<!-- logo -->
 
-			<!-- logo -->
+		<h4>{{title}}</h4>
 
-			<h4>{{title}}</h4>
+		<!-- column -->
 
-			<!-- column -->
+		<ul class="clear">
+			 <li v-for="column in navigation">
+		      {{ column.item }}
+		    </li>
+		</ul>
 
-			<ul class="clear">
-				 <li v-for="column in navigation">
-			      {{ column.item }}
-			    </li>
-			</ul>
+		<!-- avatar -->
 
-			<!-- avatar -->
-
-			<img src="./images/avatar.jpg" draggable="false">
-
-		</div>
+		<img src="./images/avatar.jpg" draggable="false">
 
 	</div>
+
+	<!-- 内容 -->
+
+	<div id="main" class="main" v-cloak>
+		
+		<!-- 文章列表 -->
+		<ul class="data-list">
+			<li>
+				<span class="time">2017-11-26</span>
+				<span class="article">
+					<h4>这是一个简单的标题这是一个简单的标题这是一个简单的标题</h4>
+					<p>这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题</p>
+					<a>查看更多</a>
+				</span>
+			</li>
+			<li>
+				<span class="time">2017-11-26</span>
+				<span class="article">
+					<h4>这是一个简单的标题这是一个简单的标题这是一个简单的标题</h4>
+					<p>这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题</p>
+					<a>查看更多</a>
+				</span>
+			</li>
+			<li>
+				<span class="time">2017-11-26</span>
+				<span class="article">
+					<h4>这是一个简单的标题这是一个简单的标题这是一个简单的标题</h4>
+					<p>这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题</p>
+					<a>查看更多</a>
+				</span>
+			</li>
+		</ul>
+		<!-- <data-list id="article" v-for="article in articles" v-bind:content="article"></data-list> -->
+
+	</div>
+
+	<!-- 尾部 -->
 	
+	<v-footer id='footer' v-bind:content="content" ></v-footer>
 
 </body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript" src="./js/template.js"></script>
 <script type="text/javascript">
 
-	// var logo = new Vue({
-
-	// 	el:'#logo',
-	// 	data:{
-			
-	// 	}
-
-	// })
-	
 	var navigation = new Vue({
 
 		el:'#navigation',
@@ -67,6 +88,35 @@
 		}
 
 	})
+
+	var main = new Vue({
+
+		el:'#main',
+		data:{
+			test : 'test1',
+		}
+
+	})
+
+	var footer = new Vue({
+
+		el:'#footer',
+		data:{
+			content : '1'
+		}
+
+	})
+
+	// var article = new Vue({
+
+	// 	el:'#article',
+	// 	data:{
+	// 		articles:[
+	// 			{time : '111' , title : '222' },
+	// 		],
+	// 	}
+
+	// })
 
 	
 
