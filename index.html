@@ -8,7 +8,6 @@
 <!-- css -->
 <link rel="stylesheet" type="text/css" href="./css/style.css" />
 <body>
-
 	<!-- 导航 -->
 
 	<div id="navigation" class="navigation" v-if = "navigation" v-cloak>
@@ -34,37 +33,40 @@
 	<!-- 内容 -->
 
 	<div id="main" class="main" v-cloak>
-		
-		<!-- 文章列表 -->
-		<ul class="data-list">
+
+		<!-- 图片墙 -->
+
+		<ul class="picture-list">
 			<li>
-				<span class="time">2017-11-26</span>
-				<span class="article">
-					<h4>这是一个简单的标题这是一个简单的标题这是一个简单的标题</h4>
-					<p>这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题</p>
-					<a>查看更多</a>
-				</span>
+				<img src="./images/test-1.png" draggable="false">
+				<p>
+					hhhhhhhhhhhhh
+				</p>
 			</li>
 			<li>
-				<span class="time">2017-11-26</span>
-				<span class="article">
-					<h4>这是一个简单的标题这是一个简单的标题这是一个简单的标题</h4>
-					<p>这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题</p>
-					<a>查看更多</a>
-				</span>
+				<img src="./images/test-2.png" draggable="false">
+				<p>
+					bbbbbbbbbbb
+				</p>
 			</li>
 			<li>
-				<span class="time">2017-11-26</span>
-				<span class="article">
-					<h4>这是一个简单的标题这是一个简单的标题这是一个简单的标题</h4>
-					<p>这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题这是一个简单的标题</p>
-					<a>查看更多</a>
-				</span>
+				<img src="./images/test-2.png" draggable="false">
+				<p>
+					bbbbbbbbbbb
+				</p>
 			</li>
 		</ul>
-		<!-- <data-list id="article" v-for="article in articles" v-bind:content="article"></data-list> -->
+		
+
+		<!-- 天气模板 -->
+		
+		<!-- 文章列表 -->
+
+		<data-list v-bind:list="list"></data-list>	
 
 	</div>
+
+
 
 	<!-- 尾部 -->
 	
@@ -94,6 +96,14 @@
 		el:'#main',
 		data:{
 			test : 'test1',
+			list:[
+				{time : '1949年10月1日' , title : '新中国成立' ,href : 'https://baike.baidu.com/item/%E6%96%B0%E4%B8%AD%E5%9B%BD%E6%88%90%E7%AB%8B/9550162?fr=aladdin' ,remark : '1949年10月1日下午2时，中国人民政治协商会议第一届全体会议选举产生的中央人民政府委员会在勤政殿举行第一次会议。中央人民政府主席毛泽东，副主席朱德、刘少奇、宋庆龄、李济深、张澜、高岗，以及周恩来等56名中央人民政府委员会委员宣布就职。'},
+				{time : '2000年2月25日' , title : '三个代表重要思想' ,href : 'https://baike.baidu.com/item/%E2%80%9C%E4%B8%89%E4%B8%AA%E4%BB%A3%E8%A1%A8%E2%80%9D%E9%87%8D%E8%A6%81%E6%80%9D%E6%83%B3/2523227?fromtitle=%E4%B8%89%E4%B8%AA%E4%BB%A3%E8%A1%A8%E9%87%8D%E8%A6%81%E6%80%9D%E6%83%B3&fromid=9735902&fr=aladdin' ,remark : '“三个代表”重要思想是江泽民同志2000年2月25日在广东省考察工作时，从全面总结党的历史经验和如何适应新形势新任务的要求出发，首次对“三个代表”重要思想进行了比较全面的阐述。具体内容为中国共产党始终代表中国先进生产力的发展要求、中国先进文化的前进方向、中国最广大人民的根本利益，是我们党的立党之本、执政之基、力量之源。'},
+				{time : '2000年2月25日' , title : '三个代表重要思想' ,href : 'https://baike.baidu.com/item/%E2%80%9C%E4%B8%89%E4%B8%AA%E4%BB%A3%E8%A1%A8%E2%80%9D%E9%87%8D%E8%A6%81%E6%80%9D%E6%83%B3/2523227?fromtitle=%E4%B8%89%E4%B8%AA%E4%BB%A3%E8%A1%A8%E9%87%8D%E8%A6%81%E6%80%9D%E6%83%B3&fromid=9735902&fr=aladdin' ,remark : '“三个代表”重要思想是江泽民同志2000年2月25日在广东省考察工作时，从全面总结党的历史经验和如何适应新形势新任务的要求出发，首次对“三个代表”重要思想进行了比较全面的阐述。具体内容为中国共产党始终代表中国先进生产力的发展要求、中国先进文化的前进方向、中国最广大人民的根本利益，是我们党的立党之本、执政之基、力量之源。'},
+				{time : '1949年10月1日' , title : '新中国成立' ,href : 'https://baike.baidu.com/item/%E6%96%B0%E4%B8%AD%E5%9B%BD%E6%88%90%E7%AB%8B/9550162?fr=aladdin' ,remark : '1949年10月1日下午2时，中国人民政治协商会议第一届全体会议选举产生的中央人民政府委员会在勤政殿举行第一次会议。中央人民政府主席毛泽东，副主席朱德、刘少奇、宋庆龄、李济深、张澜、高岗，以及周恩来等56名中央人民政府委员会委员宣布就职。'},
+				{time : '1949年10月1日' , title : '新中国成立' ,href : 'https://baike.baidu.com/item/%E6%96%B0%E4%B8%AD%E5%9B%BD%E6%88%90%E7%AB%8B/9550162?fr=aladdin' ,remark : '1949年10月1日下午2时，中国人民政治协商会议第一届全体会议选举产生的中央人民政府委员会在勤政殿举行第一次会议。中央人民政府主席毛泽东，副主席朱德、刘少奇、宋庆龄、李济深、张澜、高岗，以及周恩来等56名中央人民政府委员会委员宣布就职。'},
+				{time : '2000年2月25日' , title : '三个代表重要思想' ,href : 'https://baike.baidu.com/item/%E2%80%9C%E4%B8%89%E4%B8%AA%E4%BB%A3%E8%A1%A8%E2%80%9D%E9%87%8D%E8%A6%81%E6%80%9D%E6%83%B3/2523227?fromtitle=%E4%B8%89%E4%B8%AA%E4%BB%A3%E8%A1%A8%E9%87%8D%E8%A6%81%E6%80%9D%E6%83%B3&fromid=9735902&fr=aladdin' ,remark : '“三个代表”重要思想是江泽民同志2000年2月25日在广东省考察工作时，从全面总结党的历史经验和如何适应新形势新任务的要求出发，首次对“三个代表”重要思想进行了比较全面的阐述。具体内容为中国共产党始终代表中国先进生产力的发展要求、中国先进文化的前进方向、中国最广大人民的根本利益，是我们党的立党之本、执政之基、力量之源。'},
+			],
 		}
 
 	})
@@ -102,21 +112,10 @@
 
 		el:'#footer',
 		data:{
-			content : '1'
+			content : 'hhhhhhhhhhhhh'
 		}
 
 	})
-
-	// var article = new Vue({
-
-	// 	el:'#article',
-	// 	data:{
-	// 		articles:[
-	// 			{time : '111' , title : '222' },
-	// 		],
-	// 	}
-
-	// })
 
 	
 

@@ -10,7 +10,6 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 	min-width: 320px;
-	position: relative;
 	font-size: 50px;
 	background: #B7B7B7
 }
@@ -99,7 +98,9 @@ ul,li {
  	margin: 0 auto 2rem auto;
 }
 
-
+.main .data-list {
+	margin-top: 45%;	
+}
 
 /**
  * footer
@@ -122,7 +123,7 @@ ul,li {
 	margin: 0 auto;
  	padding-top: 0.2rem;
  	padding-bottom: 0.2rem;
-	width: 60%;
+	width: 80%;
 }
 
 .data-list li {
@@ -133,10 +134,11 @@ ul,li {
 .data-list li .time {
 	display: inline-block;
 	height: 4.5rem;
-	width:10%;
+	width:20%;
 	font-size: 0.5rem;
 	border-right: 2px solid #46a4da;
-	position: absolute;
+	float: left;
+	position: relative;
 }
 
 .data-list li .time:after {
@@ -145,22 +147,22 @@ ul,li {
     content: " ";
     height: 0;
     width: 0;
-    position: absolute;
     border-width: 0.1rem;
     top: 0.3rem;
     background: #46a4da;
     border-radius: 50%;
     box-shadow: 0 0 0 3px #afdcf8;
+    position: absolute;
 }
 
 .data-list li .article {
-	margin-left: 26%;
+	margin-left: 3%;
 	display: inline-block;
-	width: 80%;
+	width: 75%;
 	height: 4rem;
 	background: #87CEEB;
-	position: relative;
 	border-radius: 0.2rem;
+	position: relative;
 }
 
 
@@ -170,9 +172,9 @@ ul,li {
     content: " ";
     height: 0;
     width: 0;
-    position: absolute;
     border-right-color: #87CEEB;
     border-width: 0.2rem;
+    position: absolute;
     top: 0.2rem;
 }
 
@@ -246,4 +248,48 @@ ul,li {
 	border-right-color: rgba(108, 166, 205,0.9);
 }
 
+/**
+ * picture-list
+ */
+
+.picture-list {
+	padding-top: 0.5rem;
+	margin-left: 1rem;
+	width: 30%;
+	position:relative;
+}
+.picture-list li {
+	width: 90%;
+	height: 0;
+	padding-bottom: 120%;
+	background: #FFFFF0;
+	border: 1px solid #FFFFE0;
+	box-shadow: 0.2rem 0.2rem 0.1rem #888888;
+	position: absolute;
+}
+
+.picture-list li img {
+	width: 90%;
+	margin: 5%;
+}
+
+.picture-list li p {
+	font-size: 0.5rem;
+}
+
+.picture-list li:nth-child(2) {
+	/*margin-left: 0.5rem;*/
+	transform: rotate(4deg);      
+    -o-transform:rotate(4deg);    
+    -webkit-transform:rotate(4deg);
+    -moz-transform:rotate(4deg);
+}
+
+.picture-list li:nth-child(3) {
+	/*margin-left: 0.8rem;*/
+	transform: rotate(7.5deg);      
+    -o-transform:rotate(7.5deg);    
+    -webkit-transform:rotate(7.5deg);
+    -moz-transform:rotate(7.5deg);
+}
 
