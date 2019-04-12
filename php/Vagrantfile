@@ -1,14 +1,9 @@
 require 'yaml'
 require 'fileutils'
 
-required_plugins = %w( vagrant-hostmanager vagrant-vbguest )
-required_plugins.each do |plugin|
-    exec "vagrant plugin install #{plugin}" unless Vagrant.has_plugin? plugin
-end
-
 domains = {
-  frontend: 'y2aa-frontend.test',
-  backend:  'y2aa-backend.test'
+  frontend: 'y2aa-frontend.dev',
+  backend:  'y2aa-backend.dev'
 }
 
 config = {
@@ -23,14 +18,14 @@ options = YAML.load_file config[:local]
 
 # check github token
 if options['github_token'].nil? || options['github_token'].to_s.length != 40
-  puts "You must place REAL GitHub token into configuration:\n/yii2-app-advanced/vagrant/config/vagrant-local.yml"
+  puts "You must place REAL GitHub token into configuration:\n/yii2-app-advancded/vagrant/config/vagrant-local.yml"
   exit
 end
 
 # vagrant configurate
 Vagrant.configure(2) do |config|
   # select the box
-  config.vm.box = 'bento/ubuntu-16.04'
+  config.vm.box = 'ubuntu/trusty64'
 
   # should we ask about box updates?
   config.vm.box_check_update = options['box_check_update']
