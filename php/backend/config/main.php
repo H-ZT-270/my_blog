@@ -43,5 +43,12 @@ return [
         ],
         
     ],
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            //未配置完成前
+            '*'
+        ]
+    ],
     'params' => $params,
 ];

@@ -230,7 +230,7 @@ use common\models\User;
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?=Yii::$app->user->identity->avatar ?>" class="user-image" alt="User Image"  onerror="this.src='/backend/web/images/default-avatar.png'" />
-                        <span class="hidden-xs"><?=Yii::$app->user->identity->username ?></span>
+                        <span class="hidden-xs"><?=Yii::$app->user->identity->nickname ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -238,8 +238,9 @@ use common\models\User;
                              <img src="<?= Yii::$app->user->identity->avatar ?>" class="img-circle" alt="User Image"  onerror="this.src='/backend/web/images/default-avatar.png'" />
 
                             <p>
-                                <?=Yii::$app->user->identity->username ?> - <?=User::findUserManager(Yii::$app->user->identity->id) ?>
-                                <!-- <small>Member since Nov. 2012</small> -->
+                                <?=Yii::$app->user->identity->nickname ?> - <?=User::findUserManager(Yii::$app->user->identity->id) ?: '暂无职位' ?>
+                                <small>账号:<?=Yii::$app->user->identity->username ?></small>
+
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -257,7 +258,11 @@ use common\models\User;
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">关闭</a>
+                                <?= Html::a(
+                                    '修改头像',
+                                    ['/admin-user/upavatar'],
+                                    ['class' => 'btn btn-default btn-flat']
+                                ) ?>
                             </div>
                             <div class="pull-right">
                                 <?= Html::a(

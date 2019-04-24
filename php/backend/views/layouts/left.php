@@ -1,3 +1,9 @@
+<?php
+
+use yii\helpers\Url;
+
+?>
+
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -8,7 +14,7 @@
                 <img src="<?= Yii::$app->user->identity->avatar ?>" class="img-circle" alt="User Image" onerror="this.src='/backend/web/images/default-avatar.png'" />
             </div>
             <div class="pull-left info">
-                <p><?= Yii::$app->user->identity->username ?></p>
+                <p><?= Yii::$app->user->identity->nickname ?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -63,6 +69,32 @@
                 ],
             ]
         ) ?>
+
+        <ul class="sidebar-menu tree" data-widget="tree">            
+            <li class="treeview">               
+                <a href="#">                    
+                    <i class="fa fa-gears"></i> <span>权限控制</span>                    
+                    <i class="fa fa-angle-left pull-right"></i>               
+                </a>               
+                <ul class="treeview-menu">                   
+                    <li class="treeview">    
+                        <li><a href="<?= Url::toroute('admin-user/list')?>"><i class="fa fa-circle-o"></i> 后台用户</a></li> 
+                    </li>
+                    <li class="treeview">                                
+                        <a href="<?= Url::toroute('admin/role')?>">                                    
+                            <i class="fa fa-circle-o"></i> 权限 <i class="fa fa-angle-left pull-right"></i>
+                        </a>                                
+                        <ul class="treeview-menu">                                    
+                            <li><a href="<?= Url::toroute('admin/route')?>"><i class="fa fa-circle-o"></i> 路由</a></li>                                    
+                            <li><a href="<?= Url::toroute('admin/permission')?>"><i class="fa fa-circle-o"></i> 权限</a></li>                                    
+                            <li><a href="<?= Url::toroute('admin/role')?>"><i class="fa fa-circle-o"></i> 角色</a></li>                                    
+                            <li><a href="<?= Url::toroute('admin/assignment')?>"><i class="fa fa-circle-o"></i> 分配</a></li>                                    
+                            <li><a href="<?= Url::toroute('admin/menu')?>"><i class="fa fa-circle-o"></i> 菜单</a></li>                                
+                        </ul>                           
+                    </li>                  
+                </ul>            
+            </li>        
+        </ul>
 
     </section>
 
