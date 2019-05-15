@@ -11,7 +11,11 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    "modules" => [
+    "admin" => [
+            "class" => "mdm\admin\Module",
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
@@ -41,7 +45,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
         ],
-        
+        "authManager" => [
+            "class" => 'yii\rbac\DbManager',
+            "defaultRoles" => ["guest"],
+        ],      
     ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
@@ -50,5 +57,8 @@ return [
             '*'
         ]
     ],
+    "aliases" => [
+        "@mdm/admin" => "@vendor/mdmsoft/yii2-admin",
+    ],  
     'params' => $params,
 ];
